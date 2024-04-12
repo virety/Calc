@@ -1,0 +1,123 @@
+.calc { 
+    width: 400px; 
+    height: 500px; 
+    border: 1px solid #000; 
+    margin: 50px auto; 
+    background: #000; 
+    border-radius: 20px; 
+    color: #fdfdfd; 
+    font-family: Arial; 
+    display: grid; 
+    padding: 18px; 
+    box-shadow: 4px 4px 6px #4f4f4f; 
+    position: relative;
+    overflow: auto; /* Добавлено свойство overflow */
+} 
+
+body {
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.new-btn { 
+    position: absolute; 
+    top: 5px; 
+    right: 5px; 
+    padding: 2px 2px; 
+    background-color: #000; 
+    color: #fff; 
+    border-radius: 3px; 
+    cursor: pointer; 
+    text-align: center; /* Выравнивание текста по центру */
+}
+.calc-screen {
+    max-width: 350px;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Добавлено свойство для обрезания текста, выходящего за пределы ширины экрана */
+    height: 125px;
+    padding: 18px;
+    position: relative;
+    padding: 10px;
+    display: grid;
+    justify-items: end;
+    align-items: end;
+}
+
+.calc-screen p {
+    text-align: right;
+    font-size: 4rem;
+    margin: 0;
+}
+.new-buttons {
+    position: absolute;
+    top: 0;
+    top: 155px;
+    /* свойство left для выравнивания кнопок слева */
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    padding: 10px;
+    justify-items: center;
+    align-items: center;
+    /* свойство z-index для отображения кнопок поверх других элементов */
+    z-index: 99;
+  }
+.buttons {
+    display: grid;
+    grid-template-areas: 
+    "ac del percent division"
+    "seven eigth nine multi"
+    "four five siz minus"
+    "one two three plus"
+    "zero zero dot equal";
+    grid-gap: 9px;
+    padding: 10px;
+    justify-items: center;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+.btn {
+    width: 60px; /* Фиксированная ширина */
+    height: 60px; /* Фиксированная высота */
+    background: #333;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 63px; /* Выравнивание текста по центру */
+    font-size: 1.5rem;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+}
+.btn:hover {
+    filter: brightness(130%);
+}
+.btn:active {
+    filter: brightness(90%);
+}
+.bg-grey {
+    background-color: #a6a6a6;
+}
+
+.bg-dark-grey {
+    background-color: #333;
+}
+
+.bg-orange {
+    background-color: #ff9501;
+}
+
+.btn.plus-minus {
+    grid-area: plus-minus;
+}
+
+.btn.percent {
+    grid-area: percent;
+}
+
+.btn.division {
+    grid-area: division;
+} 
