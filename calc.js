@@ -106,6 +106,24 @@ document.querySelector('.new-buttons').onclick = (event) => {
     out.textContent = '';
     const key = event.target.textContent;
     if (digit.includes(key)) {
+            document.querySelector('.del').onclick = () => { 
+                if (finish) { 
+            // Если результат уже получен, удалить все 
+                clearAll(); 
+                } else if (b !== '') { 
+            // Если второе число не пустое, удалить последнюю цифру во втором числе 
+                    b = b.slice(0, -1); 
+                out.textContent = b || a; 
+                } else if (sign !== '') { 
+                // Если знак операции есть, удалить знак операции 
+                sign = ''; 
+                out.textContent = a; 
+                } else { 
+                // Удалить последнюю цифру из первого числа 
+                a = a.slice(0, -1); 
+                out.textContent = a; 
+                } 
+                } 
         if (b === '' && sign === '') {
             a += key;
             out.textContent = a;
